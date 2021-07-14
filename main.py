@@ -34,6 +34,27 @@ async def moeda(ctx):
   else:
     await ctx.send("Voce nao esta liberado para usar este comando")
 
+@client.command()
+async def enquete(ctx,title,valor1,valor2):
+  if ctx.author.id == 498306559017746462:
+    embed = discord.Embed(
+      title = title,
+      color = 0xA549CA,
+      description = f"| {valor1} | Ou | {valor2} |"
+    )
+    embedenviar = await ctx.send(embed=embed)
+    await embedenviar.add_reaction("1️⃣")
+    await embedenviar.add_reaction("2️⃣")
+
+@client.command()
+async def musica(ctx):
+  try:
+    canal = ctx.message.author.voice.channel
+    await canal.connect()
+  except:
+    await ctx.send("Se conecte a um canal de voz para poder usar")
+
+
 # @client.command()
 # async def CargoCores(ctx):
 #    if ctx.author.id == 498306559017746462:
