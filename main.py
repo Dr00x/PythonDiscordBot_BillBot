@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 import asyncio
+import random
 
 client = commands.Bot(command_prefix=">", case_insensitive=True)
 
@@ -14,7 +15,16 @@ async def ContaSimples(ctx,num1,num2):
 
 @client.command()
 async def clear(ctx, amount = 5):
-    await ctx.channel.purge(limit=amount)
+  await ctx.channel.purge(limit=amount)
+
+@client.command()
+async def moeda(ctx):
+  moeda = random.randint(1,2)
+  if moeda == 1:
+    await ctx.send("Moeda jogada, o resultado foi: Cara")
+  
+  if moeda == 2:
+    await ctx.send("moeda jogada, o resultado foi: coroa")
 
 
 client.run('ODY0Njg4NzY0NzUxNDQ2MDI3.YO5GKg.MC51dAXapi17cyvMKx0-umtHYIA')
