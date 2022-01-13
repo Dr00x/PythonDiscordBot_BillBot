@@ -57,4 +57,4 @@ async def musica(ctx):
   except:
     await ctx.send("Se conecte a um canal de voz para poder usar")
 
-client.run('ODY0Njg4NzY0NzUxNDQ2MDI3.YO5GKg.MC51dAXapi17cyvMKx0-umtHYIA')
+client.run('token')
